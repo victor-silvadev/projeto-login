@@ -1,9 +1,25 @@
 @charset "UTF-8";
 
 :root {
-    --cor01: #0D0D0D;
-    --cor02: #404040;
-    --cor03: #595959;
-    --cor04: #8C8C8C;
-    --cor05: #D9D9D9;
+    --cor01:#0D0D0D;
+    --cor02:#404040;
+    --cor03:#595959;
+    --cor04:#8C8C8C;
+    --cor05:#D9D9D9;
+}
+
+@media screen and (min-width: 988px) {
+    section#login {
+        width: 990px;
+    }
+
+    section#login > div.imagem {
+        background: #404040 url(./imagens/em-pe.jpg);
+        background-size: cover;
+        width: 45%;
+        height: 100%;
+        float: left;
+    }
+
+
 }

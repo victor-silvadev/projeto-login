@@ -14,7 +14,7 @@
     }
 
     section#login > div.imagem {
-        background: #404040 url(./imagens/em-pe.jpg);
+        background: var(--cor02) url(./imagens/em-pe.jpg);
         background-size: cover;
         width: 45%;
         height: 100%;

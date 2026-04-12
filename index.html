@@ -16,23 +16,27 @@
 
             <div class="formulario">
                 <h1>Login</h1>
-                <p>Seja ben-vindo(a) novamente. Faça login para acessar sua conta e poder fazer as configuraçoes no seu ambiente</p>
+                <p> Faça login para acessar sua conta e poder fazer as configuraçoes no seu ambiente</p>
 
                 <form action="login.php" method="post">
                     <div class="usuario">
                         <i class="material-symbols-outlined">Person</i>
                             <input type="email" name="email" id="email" placeholder="seu e-mail" required autocomplete="on" minlength="10">
-                        <label for="email">Login</label>
+                        <label for="email"></label>
                     </div>
 
                     <div class="usuario">
                         <i class="material-symbols-outlined">Lock</i>
                             <input type="password" name="senha" id="senha" placeholder="sua senha" required autocomplete="on" minlength="8">
-                        <label for="senha">Senha:</label>
+                        <label for="senha"></label>
                     </div>
 
-                    <input type="submit" value="entrar">
-                    <a href="">Eesqueci a senha:</a>
+                    <input type="submit" value="entrar" class="btn"> <br> 
+
+                    <div class="link">
+                        <a href="#" class="link1">Eesqueceu senha:</a> <span>| </span>
+                        <a href="#" class="link1">Criar conta:</a>
+                    </div>
                 </form>
             </div>
         </section>

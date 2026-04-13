@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee&family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Delius+Swash+Caps&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Monsieur+La+Doulaise&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Slab:wght@100..900&family=Titan+One&display=swap');
+
 :root {
     --cor01: #0D0D0D;
     --cor02: #404040;
@@ -58,15 +60,51 @@ section#login > .formulario {
     display: block;
 }
 
+div.imagem > h1 {
+        color: var(--cor05);
+        text-align: center;
+        padding-top: 15%;
+        font-family:"Titan One", sans-serif;
+        font-weight: 100;
+        font-size: 4em;
+
+        text-shadow: 
+        -2px -2px 0 #000,  
+        2px -2px 0 #000,
+        -2px  2px 0 #000,
+        2px  2px 0 #000;
+}
+
+    .redes-sociais {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .redes-sociais > a {
+        margin: 0px 15px;
+        padding: 10px;
+        border-radius: 15px;
+        transition-duration: .5s;
+    }
+
+    .redes-sociais > a:active  {
+        transform: scale(1.5);
+        transition-duration: .3s;
+    }
+
+
+
 h1 {
     font-size: 2.1em;
     text-align: center;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+
 }
 
 p {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    display: none;
+
 }
 
 div.usuario > i{

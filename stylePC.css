@@ -10,16 +10,45 @@
 
 @media screen and (min-width: 988px) {
     section#login {
-        width: 990px;
+        width: 970px;
+        height: 500px; 
+        display: flex; 
+        flex-direction: row-reverse;
     }
 
     section#login > div.imagem {
         background: var(--cor02) url(./imagens/em-pe.jpg);
         background-size: cover;
-        width: 45%;
+        width: 50%; 
         height: 100%;
-        float: right;
+        float: none; 
+        display: block;
     }
+
+    div.formulario > form {
+        text-align: center;
+        margin: 60px;
+    }
+
+    div.usuario > input {
+        width: 80%;
+    }
+
+    form > input[type=submit] {
+        width: 70%;
+    }
+
+    h1, p {
+        text-align: left;
+        margin-left: 30px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        margin-top: 10px;
+        font-size: 2.7em;
+    }
+
 
 
 }

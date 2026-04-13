@@ -41,7 +41,7 @@ section#login {
     height: auto;
     border-radius: 15px;
     overflow: hidden;
-    transition: width .5s, heigth .5s;
+    transition: width .5s, height .5s;
     transition-timing-function: ease;
     transform: translate(-50%, -50%);
 }

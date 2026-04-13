@@ -10,17 +10,42 @@
 }
 
 @media screen and (min-width: 988px) {
+    .bloco-login,
+    #bloco-cadastro {
+        margin-top: 20%;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .escondido {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .formulario {
+        position: relative !important;
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+
     /* 1. Ajuste do Container Principal */
     section#login {
         width: 950px;
         height: 520px; 
         display: flex; 
-        flex-direction: row-reverse; /* Mantém a imagem na direita e form na esquerda */
+        flex-direction: row; /* Fixado em row para o deslizamento funcionar */
         align-items: center;
         overflow: hidden;
+        position: relative;
+        /* Transição elástica para um movimento mais orgânico */
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
-    /* 2. Lado da Imagem */
+    /* 2. Lado da Imagem (Originalmente à esquerda no código, mas enviada para a direita) */
     section#login > div.imagem {
         background: var(--cor02) url(./imagens/em-pe.jpg);
         background-size: cover;
@@ -31,8 +56,40 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        z-index: 1;
+        /* Transição para o efeito de deslize */
+        transition: transform 0.8s ease-in-out;
     }
 
+    /* 3. Lado do Formulário (Originalmente à direita no código) */
+    section#login > .formulario {
+        width: 50%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 2;
+        /* Garantimos que no PC a transição considere o transform lateral */
+        transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.5s ease-in-out;
+    }
+
+    section#login > div.imagem {
+        /* ... suas configs de imagem ... */
+        transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* --- A MÁGICA DO CRUZAMENTO --- */
+
+    /* Quando o JS adiciona 'modo-cadastro', eles trocam de base */
+    section#login.modo-cadastro > div.imagem {
+        transform: translateX(100%); /* Move a imagem para a direita */
+    }
+
+    section#login.modo-cadastro > .formulario {
+        transform: translateX(-100%); /* Move o formulário para a esquerda */
+    }
+
+    /* Configurações de conteúdo interno mantidas */
     div.imagem > h1 {
         color: var(--cor05);
         text-align: center;
@@ -44,13 +101,13 @@
     }
 
     .imagem > .P {
-        background-color: rgba(64, 64, 64, 0.8); /* Fundo semi-transparente para leitura */
+        background-color: rgba(64, 64, 64, 0.8);
         box-shadow: 0px 9px 5px rgba(0, 0, 0, 0.4);
         width: 80%;
         padding: 20px;
         border-radius: 15px;
         margin: 0 auto;
-        position: static; /* Remove deslocamentos manuais */
+        position: static;
     }
 
     div.imagem .P > p {
@@ -60,13 +117,10 @@
         line-height: 1.5em;
     }
 
-    /* 3. Lado do Formulário */
-    section#login > .formulario {
-        width: 50%;
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    /* Ajuste para os blocos não ficarem absolute no PC */
+    .bloco-login:not(.escondido), 
+    #bloco-cadastro:not(.escondido) {
+        transform: none !important;
     }
 
     .formulario > h1 {
@@ -80,7 +134,6 @@
         width: 100%;
     }
 
-    /* 4. Inputs e Ícones */
     form > div.usuario {
         margin: 20px 0;
         display: flex;
@@ -89,24 +142,22 @@
     }
 
     div.usuario > i {
-        top: 0; /* Alinha o ícone verticalmente no centro */
+        top: 0;
         margin-right: 10px;
     }
 
     div.usuario > input {
         width: 80%;
-        margin-left: 0; /* Remove o margin que desalinhava no mobile */
+        margin-left: 0;
     }
 
-    /* 5. Botão Entrar */
     form > input[type=submit] {
         width: 85%;
-        margin-left: 0;
+        margin-left: 32px;
         margin-top: 15px;
         cursor: pointer;
     }
 
-    /* 6. Redes Sociais */
     .redes-sociais {
         display: flex;
         justify-content: center;
@@ -128,7 +179,6 @@
         background-color: var(--cor03);
     }
 
-    /* 7. Links de rodapé do form */
     form > .link {
         width: 85%;
         margin: 20px auto 0 auto;

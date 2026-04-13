@@ -20,37 +20,63 @@
             </div>
 
             <div class="formulario">
-                <h1>Login</h1>
-
-                <div class="redes-sociais">
-                    <a href=""><img src="./imagens/facebook.png" alt="logo-facebook"></a>
-                    <a href=""><img src="./imagens/google.png" alt="logo-google"></a>
-                    <a href=""><img src="./imagens/github.png" alt="logo-github"></a>
+                <div class="bloco-login">
+                    <h1>Login</h1>
+                    <div class="redes-sociais">
+                        <a href=""><img src="./imagens/facebook.png" alt="logo-facebook"></a>
+                        <a href=""><img src="./imagens/google.png" alt="logo-google"></a>
+                        <a href=""><img src="./imagens/github.png" alt="logo-github"></a>
+                    </div>
+                    <form action="login.php" method="post">
+                        <div class="usuario">
+                            <i class="material-symbols-outlined">Person</i>
+                                <input type="email" name="email" id="email" placeholder="seu e-mail" required  minlength="10">
+                            <label for="email"></label>
+                        </div>
+                        <div class="usuario">
+                            <i class="material-symbols-outlined">Lock</i>
+                                <input type="password" name="senha" id="senha" placeholder="sua senha" required minlength="8">
+                            <label for="senha"></label>
+                        </div>
+                        <input type="submit" value="entrar" class="btn"> <br>
+                        <div class="link">
+                            <a href="#" class="link1">Eesqueceu senha:</a>  <span> | </span>
+                            <a href="javascript:void(0)" class="link1" onclick="alternar()">Criar conta:</a>
+                        </div>
+                    </form>
                 </div>
+                
+                <div id="bloco-cadastro" class="escondido">
+                        <h1>Cadastro</h1>
+                        <p>Crie sua conta para começar a configurar seu ambiente.</p>
+                    
+                    <form action="cadastro.php" method="post">
+                        <div class="usuario">
+                            <i class="material-symbols-outlined">Badge</i>
+                            <input type="text" name="nome" id="nome-cad" placeholder="seu nome">
+                        </div>
+                        
+                        <div class="usuario">
+                            <i class="material-symbols-outlined">Mail</i>
+                            <input type="email" name="email-cad" id="email-cad" placeholder="seu e-mail">
+                        </div>
+                        <div class="usuario">
+                            <i class="material-symbols-outlined">Lock</i>
+                            <input type="password" name="senha-cad" id="senha-cad" placeholder="crie uma senha">
+                        </div>
 
-                <form action="login.php" method="post">
-                    <div class="usuario">
-                        <i class="material-symbols-outlined">Person</i>
-                            <input type="email" name="email" id="email" placeholder="seu e-mail" required  minlength="10">
-                        <label for="email"></label>
-                    </div>
+                        <input type="submit" value="cadastrar" class="btn">
 
-                    <div class="usuario">
-                        <i class="material-symbols-outlined">Lock</i>
-                            <input type="password" name="senha" id="senha" placeholder="sua senha" required minlength="8">
-                        <label for="senha"></label>
-                    </div>
-
-                    <input type="submit" value="entrar" class="btn"> <br> 
-
-                    <div class="link">
-                        <a href="#" class="link1">Eesqueceu senha:</a>  <span> | </span>
-                        <a href="#" class="link1">Criar conta:</a>
-                    </div>
-                </form>
+                        <div class="link">
+                            <a href="javascript:void(0)" class="link1" onclick="alternar()">Já tenho conta</a>
+                        </div>
+                    </form>
+                </div>
+                
             </div>
         </section>
     </main>
 
+    <script src="script.js"></script>
 </body>
 </html>

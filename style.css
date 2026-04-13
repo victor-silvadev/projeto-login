@@ -93,6 +93,7 @@ div.imagem > h1 {
 section#login > .formulario {
     padding: 10px;
     display: block;
+    position: relative;
 }
 
 h1 {
@@ -199,4 +200,38 @@ form > input[type=submit]:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition-duration: .5s;
+}
+
+/*============= MODO CADASTRO======================
+
+/* Localize este bloco no final do seu style.css */
+.bloco-login, #bloco-cadastro {
+    width: 100%;
+    /* Deixe a transição apenas para opacity na base */
+    transition: opacity 0.5s ease-in-out; 
+    opacity: 1;
+    transform: none; /* Garante que não comece deslocado */
+}
+
+.escondido {
+    opacity: 0 !important;
+    pointer-events: none;
+    position: absolute; 
+    top: 10px;
+    left: 0;
+    transform: none !important; /* Remove qualquer movimento vertical */
+}
+
+#bloco-cadastro h1 {
+    font-size: 2.1em;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#bloco-cadastro p {
+    display: block !important; /* Força o parágrafo a aparecer no cadastro */
+    text-align: center;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: var(--cor04);
 }

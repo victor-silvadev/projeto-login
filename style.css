@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+/* ==========================================
+   1. IMPORTAÇÕES E CONFIGURAÇÕES GERAIS
+   ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee&family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Delius+Swash+Caps&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Monsieur+La+Doulaise&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Slab:wght@100..900&family=Titan+One&display=swap');
 
 :root {
@@ -24,6 +27,9 @@ body, html {
     width: 100vw;
 }
 
+/* ==========================================
+   2. ESTRUTURA PRINCIPAL (LAYOUT)
+   ========================================== */
 main {
     position: relative;
     height: 100vh;
@@ -34,20 +40,31 @@ section#login {
     position: absolute;
     top: 50%;
     left: 50%;
-    
-    background-color: var(--cor02); 
-    box-shadow: rgba(232, 231, 231, 0.17) 0px -23px 25px 0px inset, rgba(236, 229, 229, 0.15) 0px -36px 30px 0px inset, rgba(168, 166, 166, 0.1) 0px -79px 40px 0px inset, rgba(90, 90, 90, 0.06) 0px 2px 1px, rgba(100, 100, 100, 0.09) 0px 4px 2px, rgba(202, 201, 201, 0.09) 0px 8px 4px, rgba(96, 95, 95, 0.09) 0px 16px 8px, rgba(78, 77, 77, 0.09) 0px 32px 16px;
+    transform: translate(-50%, -50%);
     
     width: 300px;
     min-height: 530px;
     height: auto;
+    background-color: var(--cor02); 
     border-radius: 15px;
     overflow: hidden;
+    
+    box-shadow: rgba(232, 231, 231, 0.17) 0px -23px 25px 0px inset, 
+                rgba(236, 229, 229, 0.15) 0px -36px 30px 0px inset, 
+                rgba(168, 166, 166, 0.1) 0px -79px 40px 0px inset, 
+                rgba(90, 90, 90, 0.06) 0px 2px 1px, 
+                rgba(100, 100, 100, 0.09) 0px 4px 2px, 
+                rgba(202, 201, 201, 0.09) 0px 8px 4px, 
+                rgba(96, 95, 95, 0.09) 0px 16px 8px, 
+                rgba(78, 77, 77, 0.09) 0px 32px 16px;
+    
     transition: width .5s, height .5s;
     transition-timing-function: ease;
-    transform: translate(-50%, -50%);
 }
 
+/* ==========================================
+   3. CABEÇALHO E IMAGEM
+   ========================================== */
 section#login > div.imagem {
     background: var(--cor02) url(./imagens/em-pe.jpg);
     background-size: cover;
@@ -55,63 +72,40 @@ section#login > div.imagem {
     display: block;
 }
 
+div.imagem > h1 {
+    color: var(--cor05);
+    text-align: center;
+    padding-top: 15%;
+    font-family:  "Archivo Black", sans-serif;
+    font-weight: 100;
+    font-size: 4em;
+
+    text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+}
+
+/* ==========================================
+   4. FORMULÁRIO E INPUTS
+   ========================================== */
 section#login > .formulario {
     padding: 10px;
     display: block;
 }
 
-div.imagem > h1 {
-        color: var(--cor05);
-        text-align: center;
-        padding-top: 15%;
-        font-family:"Titan One", sans-serif;
-        font-weight: 100;
-        font-size: 4em;
-
-        text-shadow: 
-        -2px -2px 0 #000,  
-        2px -2px 0 #000,
-        -2px  2px 0 #000,
-        2px  2px 0 #000;
-}
-
-    .redes-sociais {
-        display: flex;
-        justify-content: center;
-
-    }
-
-    .redes-sociais > a {
-        margin: 0px 15px;
-        padding: 10px;
-        border-radius: 15px;
-        transition-duration: .5s;
-    }
-
-    .redes-sociais > a:active  {
-        transform: scale(1.5);
-        transition-duration: .3s;
-    }
-
-
-
 h1 {
     font-size: 2.1em;
     text-align: center;
     margin-bottom: 10px;
-
 }
 
-p {
-    display: none;
-
+form > div.usuario {
+    margin: 10px;
 }
 
-span {
-    display: none;
-}
-
-div.usuario > i{
+div.usuario > i {
     color: #0D0D0D;
     position: relative;
     top: 15px;
@@ -122,58 +116,85 @@ div.usuario > input {
     width: 70%;
     padding: 4px;
     margin-left: 20px;
-
-
     outline: none;
     border: none;
-
     background: var(--cor02);
     border-bottom: 2px solid var(--cor03);
-
     text-align: center;
 }
 
-.link1:hover {
-    color: #0D0D0D;
+/* ==========================================
+   5. BOTÕES E REDES SOCIAIS
+   ========================================== */
+.redes-sociais {
+    display: flex;
+    justify-content: center;
 }
 
+.redes-sociais > a {
+    margin: 0px 15px;
+    padding: 10px;
+    border-radius: 15px;
+    transition-duration: .5s;
+}
 
+form > input[type=submit] {
+    margin-top: 10px;
+    margin-left: 27px;
+    width: 80%;
+    height: 35px;
+    font-size: 1em;
+    color: var(--cor04);
+    background-color: #302e2edc;
+    border: none;
+    border-radius: 15px;
+    box-shadow: inset -3px -3px 9px rgba(127, 122, 122, 0.25), 
+                inset 0px 3px 9px rgba(139, 135, 135, 0.3), 
+                inset 0px 1px 1px rgba(104, 93, 93, 0.6), 
+                inset 0px -8px 36px rgba(0, 0, 0, 0.3), 
+                inset 0px 1px 5px rgba(143, 140, 140, 0.393), 
+                2px 19px 31px rgba(0, 0, 0, 0.423);
+    transition-duration: .4s;
+}
+
+/* ==========================================
+   6. LINKS E ELEMENTOS OCULTOS
+   ========================================== */
 form > .link {
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 12px;
     display: flex;
     justify-content: space-between;
-    
 }
 
-
-
-form > .link > span {
-    margin: 40px;
+.link1:hover {
+    color: #0D0D0D;
 }
 
-
-form > div.usuario {
-    margin: 10px;
+p {
+    display: none;
 }
 
-form > input[type=submit] {
-    margin-top: 10px;
-    margin-left: 37px;
-    font-size: 1em;
-    color: var(--cor04);
-    width: 80%;
-    height: 35px;
-    background-color: #302e2edc;
-    border: none;
-    border-radius: 15px;
-    box-shadow: inset -3px -3px 9px rgba(127, 122, 122, 0.25), inset 0px 3px 9px rgba(139, 135, 135, 0.3), inset 0px 1px 1px rgba(104, 93, 93, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(143, 140, 140, 0.393), 2px 19px 31px rgba(0, 0, 0, 0.423);
-    transition-duration: .4s;
+span {
+    display: flex; /* Aqui corrigi a duplicidade, você tinha 'none' e depois 'flex' */
+}
+
+/* ==========================================
+   7. INTERAÇÕES E ESTADOS (HOVER/ACTIVE)
+   ========================================== */
+.redes-sociais > a:active {
+    transform: scale(2);
+    transition-duration: .3s;
 }
 
 form > input[type=submit]:hover {
-    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), 
+                inset 0px 3px 9px rgba(255, 255, 255, 0.3), 
+                inset 0px 1px 1px rgba(255, 255, 255, 0.6), 
+                inset 0px -8px 36px rgba(0, 0, 0, 0.3), 
+                inset 0px 1px 5px rgba(255, 255, 255, 0.6), 
+                2px 19px 31px rgba(0, 0, 0, 0.2);
     color: var(--cor05);
     cursor: pointer;
     transform: scale(1.1);

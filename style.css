@@ -130,6 +130,7 @@ div.usuario > input {
 .redes-sociais {
     display: flex;
     justify-content: center;
+    margin-bottom: 25px;
 }
 
 .redes-sociais > a {
